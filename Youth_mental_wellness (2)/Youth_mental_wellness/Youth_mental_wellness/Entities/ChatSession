@@ -1,0 +1,52 @@
+{
+  "name": "ChatSession",
+  "type": "object",
+  "properties": {
+    "session_title": {
+      "type": "string",
+      "description": "Brief title for the chat session"
+    },
+    "messages": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "sender": {
+            "type": "string",
+            "enum": [
+              "user",
+              "ai"
+            ]
+          },
+          "message": {
+            "type": "string"
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "emotion_detected": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "crisis_level": {
+      "type": "string",
+      "enum": [
+        "low",
+        "medium",
+        "high",
+        "urgent"
+      ],
+      "default": "low"
+    },
+    "session_summary": {
+      "type": "string",
+      "description": "AI-generated session summary"
+    }
+  },
+  "required": [
+    "session_title"
+  ]
+}

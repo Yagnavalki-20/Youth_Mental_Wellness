@@ -1,0 +1,73 @@
+{
+  "name": "UserFeedback",
+  "type": "object",
+  "properties": {
+    "feedback_type": {
+      "type": "string",
+      "enum": [
+        "bias_report",
+        "feature_request",
+        "bug_report",
+        "general_feedback",
+        "ai_response_quality"
+      ],
+      "description": "Type of feedback"
+    },
+    "title": {
+      "type": "string",
+      "description": "Brief title of the feedback"
+    },
+    "description": {
+      "type": "string",
+      "description": "Detailed feedback description"
+    },
+    "severity": {
+      "type": "string",
+      "enum": [
+        "low",
+        "medium",
+        "high",
+        "critical"
+      ],
+      "default": "medium",
+      "description": "Severity level"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "cultural_sensitivity",
+        "gender_bias",
+        "age_bias",
+        "accessibility",
+        "technical",
+        "content",
+        "other"
+      ],
+      "description": "Feedback category"
+    },
+    "anonymous": {
+      "type": "boolean",
+      "default": true,
+      "description": "Whether feedback is anonymous"
+    },
+    "chat_session_id": {
+      "type": "string",
+      "description": "Related chat session if applicable"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "new",
+        "reviewing",
+        "resolved",
+        "closed"
+      ],
+      "default": "new",
+      "description": "Feedback status"
+    }
+  },
+  "required": [
+    "feedback_type",
+    "description"
+  ]
+}

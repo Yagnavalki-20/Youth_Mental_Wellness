@@ -1,0 +1,65 @@
+{
+  "name": "PersonalizedGoal",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Goal title"
+    },
+    "description": {
+      "type": "string",
+      "description": "Goal description"
+    },
+    "goal_type": {
+      "type": "string",
+      "enum": [
+        "mood_improvement",
+        "stress_reduction",
+        "mindfulness_practice",
+        "journal_consistency",
+        "chat_engagement"
+      ],
+      "description": "Type of wellness goal"
+    },
+    "target_value": {
+      "type": "number",
+      "description": "Target value to achieve"
+    },
+    "current_progress": {
+      "type": "number",
+      "default": 0,
+      "description": "Current progress towards goal"
+    },
+    "target_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Target completion date"
+    },
+    "is_active": {
+      "type": "boolean",
+      "default": true,
+      "description": "Whether goal is currently active"
+    },
+    "reminder_frequency": {
+      "type": "string",
+      "enum": [
+        "daily",
+        "weekly",
+        "never"
+      ],
+      "default": "daily",
+      "description": "How often to remind user"
+    },
+    "completed_date": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When goal was completed"
+    }
+  },
+  "required": [
+    "title",
+    "description",
+    "goal_type",
+    "target_value"
+  ]
+}

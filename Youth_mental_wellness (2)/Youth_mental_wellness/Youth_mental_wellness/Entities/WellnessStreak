@@ -1,0 +1,45 @@
+{
+  "name": "WellnessStreak",
+  "type": "object",
+  "properties": {
+    "streak_type": {
+      "type": "string",
+      "enum": [
+        "mood_check",
+        "chat_session",
+        "mindfulness",
+        "journaling",
+        "daily_login"
+      ],
+      "description": "Type of streak being tracked"
+    },
+    "current_streak": {
+      "type": "number",
+      "default": 0,
+      "description": "Current consecutive days"
+    },
+    "longest_streak": {
+      "type": "number",
+      "default": 0,
+      "description": "Longest streak achieved"
+    },
+    "last_activity_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Last date activity was performed"
+    },
+    "weekly_goal": {
+      "type": "number",
+      "default": 3,
+      "description": "Weekly goal for this activity"
+    },
+    "weekly_count": {
+      "type": "number",
+      "default": 0,
+      "description": "Current week's count"
+    }
+  },
+  "required": [
+    "streak_type"
+  ]
+}

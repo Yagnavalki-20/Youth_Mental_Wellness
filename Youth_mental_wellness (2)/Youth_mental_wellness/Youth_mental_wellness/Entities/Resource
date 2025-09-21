@@ -1,0 +1,64 @@
+{
+  "name": "Resource",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Resource title"
+    },
+    "content": {
+      "type": "string",
+      "description": "Main resource content"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "anxiety",
+        "depression",
+        "stress",
+        "relationships",
+        "academic_pressure",
+        "family_issues",
+        "self_esteem",
+        "general_wellness"
+      ],
+      "description": "Resource category"
+    },
+    "resource_type": {
+      "type": "string",
+      "enum": [
+        "article",
+        "exercise",
+        "technique",
+        "emergency_contact"
+      ],
+      "description": "Type of resource"
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Searchable tags"
+    },
+    "difficulty_level": {
+      "type": "string",
+      "enum": [
+        "beginner",
+        "intermediate",
+        "advanced"
+      ],
+      "default": "beginner"
+    },
+    "estimated_time": {
+      "type": "string",
+      "description": "Time needed (e.g., '5 minutes')"
+    }
+  },
+  "required": [
+    "title",
+    "content",
+    "category",
+    "resource_type"
+  ]
+}

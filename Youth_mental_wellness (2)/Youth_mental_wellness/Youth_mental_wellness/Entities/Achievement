@@ -1,0 +1,68 @@
+{
+  "name": "Achievement",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Achievement title"
+    },
+    "description": {
+      "type": "string",
+      "description": "Achievement description"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "mood_tracking",
+        "chat_engagement",
+        "mindfulness",
+        "journaling",
+        "consistency",
+        "milestone"
+      ],
+      "description": "Achievement category"
+    },
+    "badge_icon": {
+      "type": "string",
+      "description": "Icon name for the badge"
+    },
+    "badge_color": {
+      "type": "string",
+      "description": "Badge color scheme"
+    },
+    "points": {
+      "type": "number",
+      "description": "Points awarded for this achievement"
+    },
+    "requirement_type": {
+      "type": "string",
+      "enum": [
+        "count",
+        "streak",
+        "milestone",
+        "combination"
+      ],
+      "description": "Type of requirement"
+    },
+    "requirement_value": {
+      "type": "number",
+      "description": "Value needed to unlock achievement"
+    },
+    "is_unlocked": {
+      "type": "boolean",
+      "default": false,
+      "description": "Whether user has unlocked this achievement"
+    },
+    "unlocked_date": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When achievement was unlocked"
+    }
+  },
+  "required": [
+    "title",
+    "description",
+    "category",
+    "points"
+  ]
+}
